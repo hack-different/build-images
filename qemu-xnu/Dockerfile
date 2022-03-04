@@ -2,7 +2,7 @@ FROM ubuntu:latest
 
 RUN apt update && apt upgrade -y
 RUN TZ=Etc/UTC ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
-RUN TZ=Etc/UTC apt-get -y install tzdata
+RUN apt-get -y install tzdata
 
 RUN apt install -y git libglib2.0-dev libfdt-dev libpixman-1-dev zlib1g-dev libtasn1-dev ninja-build build-essential cmake
 
