@@ -1,6 +1,6 @@
 FROM ubuntu:latest
 
-RUN apt update && apt upgrade -y
+RUN apt update && apt upgrade -y && apt install -y apt-utils
 RUN TZ=Etc/UTC ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 RUN DEBIAN_FRONTEND=noninteractive TZ=Etc/UTC apt-get -y install tzdata
 
